@@ -1,0 +1,28 @@
+div.controls		
+	div(class='ui-active-toggle enabled-toggle ' + addon_state)
+		div.ui-active-toggle-border.color_a_border_target
+			div.ui-active-toggle-circle.color_a_bg_target
+	p.name-field= 'Addon ' + name
+	p.label-field.new-label= 'NEW!'
+	if addon_state === 'pending'
+		p.name-field.faded= ' (Pending Approval)'
+
+div.image-field
+	form(class='upload-form', method='POST', action='/upload' enctype='multipart/form-data', accept-charset='UTF-8', style='display:none;')
+		input(class='cover-image-uploader', type='file' name='file',  accept='image/*')
+	if imageURL
+		div.cover-image.has-image(style='width:100%;height:100px;background: url(' + imageURL + ') 50% 50% / cover no-repeat;-webkit-background-size: cover;-webkit-backface-visibility: hidden;-webkit-perspective: 1000;-webkit-transition: all 1.5s ease-out;')
+			p.change-cover-image Change image
+	else
+		div.cover-image.empty.color_a_bg
+			p.add-cover-image-text Select image
+
+div.controls		
+	.labels
+		p.label.name Set Name
+		p.label.right.description Set Description
+	.inputs
+		input.input-name(type='text', value= name, placeholder='Name')
+		input.right.input-description(type='text', value= description, placeholder='Description')
+	p.needs_permission(class= needs_permission == true ? 'active' : '')= 'Needs permission: ' + needs_permission
+	p.input-remove &#10006;

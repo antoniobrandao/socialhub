@@ -1,0 +1,40 @@
+section
+	h1 Text Page
+	p This text page represents any moment when the User is not in the Addons page.
+
+section
+	h1 How to test
+	h4 While in this page
+	p Press the "Add Addon" button in the top right corner and watch the red badge updating while new Addons are being received.
+	p Notice that the Badge remains after a page refresh.
+	p Notice that the Badge is removed when the User visits the Addons Page.
+	h4 While in the Addons page
+	p Press the "Add Addon" button and watch the list update with new items marked as "New".
+	p Notice the new Addons are created with "needs_permission" set to true/false randomly (Addon bottom left corner).
+	p The ability of deleting items was not requested but it is implemented to make testing easier.
+	p Click the "Select Image" to to add an image to an Addon. Then, click "Change Image" on the same box to update the image. The image file will be deleted if you delete the Addon. When updating an Image, the prior previous is deleted.
+	p Use the Title and Description fields to edit their values.
+
+section
+	h1 UX Assumptions
+	h4 Badge
+	p To minimize visual noise, the numerical Badge should only be shown when the User is not in the Addons page. As soon as the User visits the Addons page, the Badge expires.
+	p The Badge should use the same color used to mark the Addons in the list as "New". In this case Green is used.
+	h4 Green highlight on each Addon in the List
+	p The green highlight is shown to any Addon that the User hasn't seen. As soon as the User opens the Addons page, they are marked as "known". This is done by adding the new Addon's IDs to the "knownAddons" (Array) property of the User model.
+	p The green highlight is only shown once. If the User navigates to another page, the highlight will not be shown again.
+	h4 Notification pop-up
+	p A temporary notification is shown to confirm that the Addon has been enabled (or not)
+	p When an Addon requires permission to be enabled, the activation switch in it's UI will have another color indicating it requires staff validation.
+
+section
+	h2 When a new Addon is received via the socket
+	h4 If we are in the list (Addons Page)
+	p The collection is updated, triggering a new render. 
+	p A new DOM element, highlighted as "new", is added at the top using "prepend".
+	p The new Addon's ID is instantly added to the "knownAddons" (array) property of the User model - to be rendered without highlight next time.
+
+section
+	h4 If we are in another page
+	p Collection is updated and the Badge is shown in the "Addons Page" menu item.
+	p The next time we visit the Addons Page, the new Addons will be added to the DOM highlighted as "new" (with green) and their IDs instantly added to the "knownAddons" (array) property of the User model - to be rendered without highlight next time.

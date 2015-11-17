@@ -1,0 +1,6 @@
+h1 Addons Page
+p Available Addons are shown here. If you click the "Add Addon" button in the top right corner, an ajax request causes the creation of a new Addon. 
+p After the Addon is created in the server, the server's socket instance emits the event "addon_created" with the newly-created Addon as data. 
+p The Backbone app socket listener receives this event. The new Addon present in the data is then added to the current Backbone Addons collection, causing an instant update on the list. The new Addon element is visually marked as "new".
+
+div.addons-list

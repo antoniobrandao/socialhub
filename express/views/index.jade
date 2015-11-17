@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	.header
+		.header-item.logo SocialHub
+		div#addons-button.header-item.navigation-item(data-route='')
+			p Addons Page
+			div#addons-badge
+		div#page-button.header-item.navigation-item(data-route='page_empty') Empty Page
+		#add-addon-button.header-item Create Addon
+	.left-bar
+		.left-bar-item Eingang
+		.left-bar-item Mir zugewiesen
+		.left-bar-item Erledigt
+		.left-bar-item Gelöscht
+	#main-area
