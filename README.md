@@ -16,7 +16,3 @@
 	6 - open http://localhost:3000/ in Browser
 
 	7 - CTRL-C twice to exit
-
-## License
-
-MIT
