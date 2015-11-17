@@ -18,6 +18,6 @@ gulp.task('start', function()
 	console.log(':::::::::: watching ::::::::::')
 	console.log('::::::::::::::::::::::::::::::')
 	console.log('')
-	console.log('Press twice CTRL-C to exit.')
+	console.log('Press CTRL-C twice to exit.')
 	console.log('')
 });

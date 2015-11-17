@@ -1,12 +1,4 @@
-# ab-modal
-
-## Install
-
-With [npm](http://npmjs.org) do:
-
-```bash
-$ npm install ab-modal --save-dev
-```
+# socialhub addons microapp
 
 ## Usage
 
