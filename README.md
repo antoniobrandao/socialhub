@@ -41,7 +41,7 @@ Express is listening to port 5000 and BrowserSync is set to proxy: 3000, so we o
 
 - Placed the "dump" folder in the project root and created the database by running "mongorestore -d socialhub_test dump".
 - Added Mongoose & created the database connection (db_connect.js)
-- Adjusted the start sequence to make Express listen to requests only after a connection to the database is established.
+- Adjusted the start sequence to make Express listen to requests only after a connection to the database is established
 
 #### File uploads (for the optional images)
 
@@ -53,8 +53,8 @@ Intalled the multer module to handle file uploads. On the frontend I added the j
 - Created Addon, Account, and User models.
 - Created the respective GET / POST / PUT / DELETE / "list" routes for each in the file "api.js".
 - Created a POST route for the file uploads
-- Created the methods to handle those requests in the folder "controllers".
-- Included some simple middleware that helps handling those requests.
+- Created the methods to handle those requests in the folder "controllers"
+- Included some simple middleware that helps handling those requests
 
 #### Socket.io (Express)
 
@@ -74,25 +74,31 @@ Added nodemailer to handle emails and created a file to handle it (controllers/e
 
 All frontend files are located in the "frontend" folder.
 
+#### Why JADE in the Frontend?
+
+It's pleasant and beneficial to use the same HTML syntax in both the Backend and Frontend.
+
 #### CSS (Stylus)
 
-I'm just using 3 files for this tiny project. A main file "index.styl", a "reset.styl", and a "mixins.styl". Their names makes their purposes clear. I didn't bother to make more individual files because this is a really small project. Two extra files (plugin styles) are also imported.
+I'm just using 3 Stylus files for this tiny project. A main file "index.styl", a "reset.styl", and a "mixins.styl". Their names makes their purposes clear. I didn't bother to make more individual files because this is a really small project. Two extra files (plugin styles) are also imported.
+
+Why Stylus? Stylus, like JADE, was created by the same person who created Express (TJ Holowaychuk), and they make sense together. JADE and Stylus look similar which makes code more homogenous.
 
 #### Base JavaScript
 
 - index.js - This is the root - imports the "frontend" app, and jquery. Sets up the "frontend" app to start on the DOM "ready" event.
 - frontend.js - This is the actual app. It has 4 responsibilities:
-	- import required files and modules
-	- receive DOMReady event to start marionette application
-	- house a series of utility functions and variables that will be available throughout the app
-	- hold the socket listener (which listens to the "created_addon" event)
+	- Import required files and modules
+	- Receive DOMReady event to start marionette application
+	- House a series of utility functions and variables that will be available throughout the app
+	- Hold the socket listener (which listens to the "created_addon" event)
 
 #### Backbone / Marionette
 
 I also dropped in a folder structure I usually use in small projects:
 
 - marionette/
-	- views/ - The folder holding all the views.
+	- views/ - The folder holding all the views
 	- application.js - Marionette application creation & startup
 	- behaviours.js - Functions to handle interactions (for backbone views only)
 	- collections.js - Declare all the collections we expect to use
@@ -112,7 +118,7 @@ On every load of the application (or page refresh) we:
 
 - check if there are unknown Addons (Addons the user hasn't seen yet) and:
 	- If we are in the Addons Page - Highlight the new Addons so the user can perceive them
-	- If we are in another page - Opdate the numerical badge on the "Addons Page" menu item
+	- If we are in another page - Update the numerical badge on the "Addons Page" menu item
 
 ## Further Information
 
