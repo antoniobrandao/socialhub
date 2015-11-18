@@ -13,7 +13,6 @@
 
 # Workflow
 
----------------------
 ## Build System
 
 #### 1. Gulp/Browserify watch/build system
@@ -25,8 +24,6 @@ I use regular JavaScript, Stylus for the CSS and the "jadeify" Browserify transf
 See the tasks in gulp/watch.js and gulp/build.js for reference. They are pretty easy to understand.
 
 All processed files go either to "builds/developement" or to "builds/production" depending on the set environment.
-
----------------------
 
 ## Backend 
 
@@ -70,9 +67,6 @@ It uses two controllers (controllers/email, controllers/create_addon) to handle 
 #### 6. Nodemailer
 
 Added nodemailer to handle emails and created a file to handle it (controllers/email.js)
-
-  
----------------------
   
 # Frontend
 
