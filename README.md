@@ -74,14 +74,15 @@ Added nodemailer to handle emails and created a file to handle it (controllers/e
 
 All frontend files are located in the "frontend" folder.
 
-#### Why JADE in the Frontend?
+#### Backbone Views
 
-It's pleasant and beneficial to use the same HTML syntax in both the Backend and Frontend.
+Every Backbone view (in frontend/js/marionette/views/) has it's respective template in a "templates" folder.
+All the templates are in JADE. Why JADE? It's pleasant to use the same HTML syntax in both the Backend and Frontend.
+This is achieved using the Browserify Transform "jadeify".
 
 #### CSS (Stylus)
 
 I'm just using 3 Stylus files for this tiny project. A main file "index.styl", a "reset.styl", and a "mixins.styl". Their names makes their purposes clear. I didn't bother to make more individual files because this is a really small project. Two extra files (plugin styles) are also imported.
-
 Why Stylus? Stylus, like JADE, was created by the same person who created Express (TJ Holowaychuk), and they make sense together. JADE and Stylus look similar which makes code more homogenous.
 
 #### Base JavaScript
