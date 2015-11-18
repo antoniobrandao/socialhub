@@ -18,7 +18,6 @@ var models      = require("./models");
 var behaviours  = require("./behaviours");
 
 window.collections = require("./collections");
-window.functions   = require("./functions");
 
 module.exports = {
 
