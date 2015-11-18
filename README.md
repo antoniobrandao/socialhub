@@ -15,7 +15,7 @@
 
 ## Build System
 
-#### 1. Gulp/Browserify watch/build system
+#### Gulp/Browserify watch/build system
 
 The project runs on a Gulp/Browserify watch/build system. I included my usual Gulp folder/structure (similar to my setup in [https://github.com/antoniobrandaodesign/ab_boilerplate](https://github.com/antoniobrandaodesign/ab_boilerplate)) and adapted the tasks to this project.
 
@@ -23,31 +23,31 @@ I use regular JavaScript, Stylus for the CSS and the "jadeify" Browserify transf
 
 See the tasks in gulp/watch.js and gulp/build.js for reference. They are pretty easy to understand.
 
-All processed files go either to "builds/developement" or to "builds/production" depending on the set environment.
+All processed files go either to "builds/development" or to "builds/production" depending on the set environment.
 
 ## Backend 
 
-#### 2. Scaffold a new Express project
+#### Scaffold a new Express project
 
 Used the NPM module generator-express to scaffold a clean Express app (https://www.npmjs.com/package/generator-express). 
 
-#### 3. BrowserSync & gulp-nodemon
+#### BrowserSync & gulp-nodemon
 
 Configured BrowserSync with gulp-nodemon to watch backend and frontend files. Nodemon takes care of restarting Express every time I change backend JavaScript files. BrowserSync handles frontend files, injecting changed CSS and reloading the browser when JavaScript files are changed.
 
 Express is listening to port 5000 and BrowserSync is set to proxy: 3000, so we open the app at localhost:3000.
 
-#### 6. DB, Mongoose & Startup
+#### DB, Mongoose & Startup
 
 - Placed the "dump" folder in the project root and created the database by running "mongorestore -d socialhub_test dump".
 - Added Mongoose & created the database connection (db_connect.js)
 - Adjusted the start sequence to make Express listen to requests only after a connection to the database is established.
 
-#### 4. File uploads (for the optional images)
+#### File uploads (for the optional images)
 
 Intalled the multer module to handle file uploads. On the frontend I added the jquery_form plugin to handle the respective upload form.
 
-#### 5. Express Routes, Models & Middleware
+#### Express Routes, Models & Middleware
 
 - Cleaned up the default "index" route
 - Created Addon, Account, and User models.
@@ -56,7 +56,7 @@ Intalled the multer module to handle file uploads. On the frontend I added the j
 - Created the methods to handle those requests in the folder "controllers".
 - Included some simple middleware that helps handling those requests.
 
-#### 6. Socket.io (Express)
+#### Socket.io (Express)
 
 Added the socket.io module and created a file to handle it (socket.js). 
 
@@ -64,17 +64,17 @@ This socket expects two events from the front-end: "send_email" & "create_addon"
 
 It uses two controllers (controllers/email, controllers/create_addon) to handle the events.
 
-#### 6. Nodemailer
+#### Nodemailer
 
 Added nodemailer to handle emails and created a file to handle it (controllers/email.js)
   
 # Frontend
 
-#### 1. Folder
+#### File Folder
 
 All frontend files are located in the "frontend" folder.
 
-#### 2. CSS (Stylus)
+#### CSS (Stylus)
 
 I'm just using 3 files for this tiny project. A main file "index.styl", a "reset.styl", and a "mixins.styl". Their names makes their purposes clear. I didn't bother to make more individual files because this is a really small project. Two extra files (plugin styles) are also imported.
 
